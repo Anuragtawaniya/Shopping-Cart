@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        html,body{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cart Page</h1>
+
+   <div class="cart-product">
+
+   </div>
+
+
+    <script type="module">
+       import product from "./products.js"; 
+      
+       const data = localStorage.getItem("product");
+
+       let genders = Object.values(product);
+    for(let i =0;i<=4;i++){
+       for(let x of genders){
+        const id = x[i]['id'];
+        const price = x[i]['price'];
+        document.body.innerHTML += `<div>
+        <div class="card-img">
+            <span>Product Id${id}</span>
+        <img src="https://cdn.pixabay.com/photo/2016/08/12/00/36/legendary-1587325_1280.jpg" alt="" width="200">
+        </div>
+        <span>${price}</span>
+        <button>Buy Now</button>
+            </div>
+       `;
+       }
+    }
+
+    </script>
+</body>
+</html>

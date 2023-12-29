@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="./cart.html"><button>Go to bag</button></a>
+<div class="products" style="display: flex;align-items: center;justify-content: space-around;">
+    <div class="card" style="text-align: center;">
+        <div class="card-img">
+        <img src="https://cdn.pixabay.com/photo/2016/08/12/00/36/legendary-1587325_1280.jpg" alt="" width="200">
+        </div>
+        <button onclick="addCart(1)">Add to cart</button>
+            </div>
+            <div class="card" style="text-align: center;">
+                <div class="card-img">
+                <img src="https://cdn.pixabay.com/photo/2016/08/12/00/36/legendary-1587325_1280.jpg" alt="" width="200">
+                </div>
+                <button onclick="addCart(2)">Add to cart</button>
+            </div>
+        
+            <div class="card" style="text-align: center;">
+                <div class="card-img">
+                <img src="https://cdn.pixabay.com/photo/2016/08/12/00/36/legendary-1587325_1280.jpg" alt="" width="200">
+                </div>
+                <button onclick="addCart(3)">Add to cart</button>
+            </div>
+        
+</div>
+    <script>
+            const cartProduct = [];
+       function addCart(id){
+  
+            if(!cartProduct.includes(id)){
+                cartProduct.push(id);
+            }
+          localStorage.setItem("product",JSON.stringify(cartProduct));
+                }
+             
+    </script>
+
+</body>
+</html>
